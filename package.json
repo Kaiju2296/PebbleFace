@@ -17,14 +17,8 @@
         "resources": {
             "media": [
                 {
-                    "file": "images/converted.png",
-                    "name": "dark",
-                    "targetPlatforms": null,
-                    "type": "bitmap"
-                },
-                {
-                    "file": "images/Kaiju2296",
-                    "name": "KAIJU",
+                    "file": "images/Kaiju BW",
+                    "name": "KAIJU1",
                     "targetPlatforms": null,
                     "type": "bitmap"
                 },

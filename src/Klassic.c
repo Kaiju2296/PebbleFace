@@ -16,7 +16,7 @@ static void update_time() {
   static char buffer[] = "00:00";
 
   // format the way that the time text is going to be displayed
-strftime(buffer, sizeof("00:00"),"%H:%M", tick_time);
+strftime(buffer, sizeof("00:00"),"%H*%M", tick_time);
 
 
   // Display this time on the TextLayer
@@ -26,8 +26,8 @@ strftime(buffer, sizeof("00:00"),"%H:%M", tick_time);
 
 static void main_window_load(Window *window) {
   // Create GBitmap, then set to created BitmapLayer
-  s_background_bitmap = gbitmap_create_with_resource(RESOURCE_ID_dark);
-  s_background_layer = bitmap_layer_create(GRect(0, -6, 144, 180));
+  s_background_bitmap = gbitmap_create_with_resource(RESOURCE_ID_KAIJU1);
+  s_background_layer = bitmap_layer_create(GRect(0, 0, 144, 180));
   bitmap_layer_set_bitmap(s_background_layer, s_background_bitmap);
   layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_background_layer));
   
@@ -36,8 +36,8 @@ static void main_window_load(Window *window) {
 
   //time layer
   s_time_layer = text_layer_create(GRect(15, 141, 120, 40));
-  text_layer_set_background_color(s_time_layer, GColorBlack);
-  text_layer_set_text_color(s_time_layer, GColorGreen);
+  text_layer_set_background_color(s_time_layer, GColorClear);
+  text_layer_set_text_color(s_time_layer, GColorBlack);
   text_layer_set_text(s_time_layer, "00:00");
 
   // Improve the layout to be more like a watchface
@@ -101,4 +101,3 @@ int main(void) {
   app_event_loop();
   deinit();
 }
-
